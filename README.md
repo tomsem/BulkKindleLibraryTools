@@ -1,6 +1,9 @@
 # Bulk Kindle USB Downloader
 
-Quick'n'dirty script to download all you Kindle ebooks.
+
+This is a fork of [bOOkp](https://github.com/sghctoma/bOOkp) with updates to support OTP and changes to Amazon's link structure for downloading ebooks.
+
+This is a quick'n'dirty script to download all you Kindle ebooks.
 
 I needed to backup all my Kindle e-books, so put together this script. It does
 work for now, but a change in the download process will probably break it, and I
