@@ -1,4 +1,4 @@
-# bOOkp
+# Bulk Kindle USB Downloader
 
 Quick'n'dirty script to download all you Kindle ebooks.
 
