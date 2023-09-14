@@ -181,13 +181,13 @@ def main():
     handler.setFormatter(formatter)
     logger.addHandler(handler)
 
-    oath = args.oath
-    if not oath:
-            oath = getpass.getpass("Your Amazon Oath: ")
-
     password = args.password
     if not password:
         password = getpass.getpass("Your Amazon password: ")
+
+    oath = args.oath
+    if not oath:
+        oath = getpass.getpass("Your Amazon Oath: ")
 
     if os.path.isfile(args.outputdir):
         logger.error("Output directory is a file!")
