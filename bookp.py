@@ -142,7 +142,7 @@ def get_asins(user_agent, cookies, csrf_token):
 def download_books(user_agent, cookies, device, asins, directory):
     logger.info("Downloading {} books".format(len(asins)))
     cdn_url = 'https://cde-ta-g7g.amazon.com/FionaCDEServiceEngine/FSDownloadContent'
-    cdn_params = 'type=EBOK&key={}&fsn={}&device_type={}&customerId={}&authPool=Amazon'
+    cdn_params = 'type=EBOK&key={}&fsn={}&device_type={}&customerId=**putcustomeridhere**&authPool=Amazon'
 
     for asin in asins:
         try:
@@ -227,3 +227,4 @@ if __name__ == '__main__':
         sys.exit(main())
     except KeyboardInterrupt:
         logger.info("Exiting...")
+
