@@ -34,7 +34,7 @@ printed (and saved to the log if specified) when the books are downloaded.
 ```
 usage: bookp.py [-h] [--verbose] [--showbrowser] --email EMAIL
                 [--password PASSWORD] [--outputdir OUTPUTDIR] [--proxy PROXY]
-                [--asin [ASIN [ASIN ...]]]
+                [--asin [ASIN [ASIN ...]]] [--logfile FILENAME]
 
 Amazon e-book downloader.
 
