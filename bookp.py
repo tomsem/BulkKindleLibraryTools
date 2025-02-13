@@ -227,7 +227,7 @@ def main():
 
     download_books(user_agent, cookies, devices[choice], asins, custid, args.outputdir)
 
-    logger.info('Download complete, open with Serial Number:' + device['deviceSerialNumber'])
+    logger.info('Download complete, open with Serial Number:' + devices['deviceSerialNumber'])
     
     print("\n\nAll done!\nNow you can use apprenticeharper's DeDRM tools " \
           "(https://github.com/apprenticeharper/DeDRM_tools)\n" \
