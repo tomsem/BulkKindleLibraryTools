@@ -33,7 +33,7 @@ def create_session(email, password, oath, browser_visible=True, proxy=None):
     browser.get('https://www.amazon.com')
 
     logger.info("Logging in")
-    browser.find_element(By.CSS_SELECTOR,'#nav-signin-tooltip > a.nav-action-signin-button').click()
+    browser.find_element(By.CSS_SELECTOR,'#gw-sign-in-button > span > a').click()
     browser.find_element(By.ID,"ap_email").clear()
     browser.find_element(By.ID, "ap_email").send_keys(email)
     browser.find_element(By.CSS_SELECTOR, '.a-button-input').click()
@@ -148,7 +148,7 @@ def download_books(user_agent, cookies, device, asins, directory):
         try:
             params = cdn_params.format(asin, device['deviceSerialNumber'], device['deviceType'])
             r = requests.get(cdn_url, params=params, headers=user_agent, cookies=cookies, stream=True)
-            name = re.findall("filename\*=UTF-8''(.+)", r.headers['Content-Disposition'])[0]
+            name = re.findall("filename\\*=UTF-8''(.+)", r.headers['Content-Disposition'])[0]
             name = urllib.parse.unquote(name)
             name = name.replace('/', '_')
             with open(os.path.join(directory, name), 'wb') as f:
@@ -178,8 +178,10 @@ def main():
         logger.setLevel(logging.WARNING)
     formatter = logging.Formatter('[%(levelname)s]\t%(asctime)s %(message)s')
     handler = logging.StreamHandler()
+    handlerLog = logging.FileHandler("kindle.log")
     handler.setFormatter(formatter)
     logger.addHandler(handler)
+    logger.addHandler(handlerLog)
 
     password = args.password
     if not password:
