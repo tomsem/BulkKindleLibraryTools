@@ -29,6 +29,17 @@ to. This is important, because the downloaded books will be DRMd to that
 particular device. The serial number (which is required to remove DRM) will be
 printed (and saved to the log if specified) when the books are downloaded.
 
+## Tips
+
+If the script doesn't log in successfully, wait a moment and try again. Sometimes, 
+the Amazon website doesn't load correctly, and the script can't find the 'sign in' 
+button to click. It will then fail with a 'selenium.common.exceptions.NoSuchElementException' 
+error.
+
+I recommend using the LOGFILE variable to save your output, it will note the ASINs of 
+any books it fails to download, so you can fill those in with a second pass or else
+manually download them.
+
 ## Usage
 
 ```
